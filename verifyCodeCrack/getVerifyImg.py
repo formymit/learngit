@@ -19,7 +19,7 @@ header = {
 def getImg(url):
     try:
 
-        for num in range(1454, 2000):
+        for num in range(1000, 2000):
             print num
             request = urllib2.Request(url, headers=header)
             response = urllib2.urlopen(request)

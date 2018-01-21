@@ -31,6 +31,16 @@ class MongoQueue():
             print(url, "已经存在与队列中")
             pass
 
+    def dataPush(self, name_cardNum):  # 添加新的URL进队列
+        try:
+            self.db.insert({'_id': name_cardNum})
+            print(name_cardNum, "插入队列成功")
+            flag = 1 #数据插入
+        except errors.DuplicateKeyError as e: #报错则代表已经存在于队列中
+            print(name_cardNum, "已经存在与队列中")
+            flag = 0 #数据插入失败
+        return flag
+
     def guba_push(self, url, title):  # 添加新的URL进队列
         try:
             self.db.insert({'_id': url,'title': title, 'status': self.OUTSTANDING})

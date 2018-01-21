@@ -12,13 +12,13 @@ class basicConfig():
     def __init__(self):
 
         #四位数字id的起止范围
-        self.cardNumStart = 4999 # 5000
-        self.cardNumEnd = 7000
+        self.cardNumStart = 0 # 5000
+        self.cardNumEnd = 0
 
         self.processNum = 30 #进程数
 
         #配置抓取页面数
-        self.maxPn = 21
+        self.maxPn = 1
 
 
         ######这里一般无需配置######################
@@ -26,7 +26,10 @@ class basicConfig():
         self.databaseName = 'baiduSX'
         self.collectionName = 'json_url_areaName_' + str(self.cardNumStart) + '_' + str(self.cardNumEnd)
 
+        #
+        self.dataInsertCollecitonName = 'name_cardNum' + str(self.cardNumStart) + '_' + str(self.cardNumEnd)
+
         self.jsonFileName = 'json_data_' + str(self.cardNumStart) + '_' + str(self.cardNumEnd)
         self.inameCardNumFileName = 'iname_cardNum_search_cardNum_'  + str(self.cardNumStart) + '_' + str(self.cardNumEnd)
 
-        #########################################
+        ############## ###########################
